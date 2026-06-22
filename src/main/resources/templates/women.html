@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women's Collection</title>
+  <link rel="stylesheet" href="/css/women.css"/>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">WomenWear</div>
+    <div class="search-box">
+      <input type="text" placeholder="Search women's fashion...">
+    </div>
+    <a href="/cart" class="cart-icon">🛒</a>
+  </div>
+
+  <button id="scrollToTopBtn" title="Go to top">⬆</button>
+	
+  <div class="hero" style="background-image: url('data:image/jpeg;base64,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');">
+    <h1>Elegant & Stylish</h1>
+    <p>Discover premium women’s fashion</p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="card-container">
+
+    <div th:if="${#lists.isEmpty(products)}">
+      <p>No products available.</p>
+    </div>
+
+    <div class="card" th:each="product : ${products}">
+      <h3 th:text="${product.name}"></h3>
+
+      <img th:src="${product.imageUrl}" alt="Product Image"/>
+
+      <p th:text="${product.description}"></p>
+
+      <p>₹ <span th:text="${product.price}"></span></p>
+
+	<div class="buttons">
+      <!-- ADD TO CART -->
+      <form th:action="@{/cart/add}" method="post">
+        <input type="hidden" name="title" th:value="${product.name}">
+        <input type="hidden" name="description" th:value="${product.description}">
+        <input type="hidden" name="price" th:value="${product.price}">
+        <input type="hidden" name="imageUrl" th:value="${product.imageUrl}">
+        <button type="submit" class="btn btn-cart">Add to Cart</button>
+      </form>
+
+      <!-- BUY NOW -->
+      <a th:href="@{/payment}" class="btn btn-buy">Buy Now</a>
+    </div>
+
+</div>
+  </div>
+
+<center>
+  <a href="/home">
+    <button class="home-btn">Home</button>
+  </a>
+</center>
+
+<script src="/js/women.js"></script>
+</body>
+</html>

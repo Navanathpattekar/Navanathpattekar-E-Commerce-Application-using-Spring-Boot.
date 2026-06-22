@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Status</title>
+</head>
+<body>
+
+<h2>Check Your Order Status</h2>
+<p>Enter your Order ID to track your order.</p>
+
+<form>
+  <input type="text" placeholder="Enter Order ID" required>
+  <button type="submit">Track Order</button>
+</form>
+
+<h3>Order Status Meaning</h3>
+<ul>
+  <li><b>Order Confirmed</b> – Order placed successfully</li>
+  <li><b>Processing</b> – Order is being packed</li>
+  <li><b>Shipped</b> – Order dispatched</li>
+  <li><b>Out for Delivery</b> – Arriving today</li>
+  <li><b>Delivered</b> – Order delivered</li>
+  <li><b>Cancelled / Returned</b></li>
+</ul>
+
+<p>If your order is delayed beyond 48 hours, please contact support.</p>
+
+<center>
+  <a href="/home">
+    <button class="home-btn">Home</button>
+  </a>
+</center>
+
+</body>
+</html>

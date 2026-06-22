@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Gentleman Jones</title>
+  <link rel="stylesheet" th:href="@{/CSS/contactUs.css}" />
+</head>
+<body>
+
+  <header>
+    <h1>GENTLEMAN JONES</h1>
+  </header>
+
+  <nav>
+    <a th:href="@{/home}">Home</a>
+    <a th:href="@{/aboutUs}">About Us</a>
+    <a th:href="@{/contactUs}">Contact Us</a>
+  </nav>
+
+  <section class="container">
+    <h1>Contact Us</h1>
+    <p>We’re always happy to help! Reach out using the details below or by filling the form.</p>
+
+    <div style="margin: 30px 0;">
+      <p><strong>📞 Phone:</strong> (+91) 93530 16038</p>
+      <p><strong>📧 Email:</strong> support@gentlemanjones.com</p>
+      <p><strong>📍 Address:</strong> 123 Kingsley Ave, New York, NY, USA</p>
+    </div>
+
+    <div th:if="${success}" style="color: green; margin-bottom: 10px;" th:text="${success}"></div>
+
+    <form th:action="@{/contactUs}" th:object="${contactMessage}" method="post">
+        <label>Name</label>
+        <input type="text" th:field="*{name}" placeholder="Your Name" required />
+
+        <label>Email</label>
+        <input type="email" th:field="*{email}" placeholder="Your Email" required />
+
+        <label>Message</label>
+        <textarea th:field="*{message}" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Gentleman Jones. All rights reserved.
+  </footer>
+
+</body>
+</html>

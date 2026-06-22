@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/css/edit-product.css">
+    
+</head>
+<body>
+
+<h1>Edit Product</h1>
+
+<form th:action="@{/seller/update-product}" method="post" th:object="${product}">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Product Name:</label><br/>
+    <input type="text" th:field="*{name}" required />
+    <br/><br/>
+
+    <label>Category:</label><br/>
+    <select th:field="*{category}" required>
+        <option value="">-- Select Category --</option>
+        <option value="MEN">Men</option>
+        <option value="WOMEN">Women</option>
+        <option value="KIDS">Kids</option>
+        <option value="SHOES">Shoes</option>
+        <option value="JEWELLERY">Jewellery</option>
+        <option value="BEAUTY">Beauty</option>
+        <option value="DECORATION">Decoration</option>
+        <option value="FURNITURE">Furniture</option>
+    </select>
+    <br/><br/>
+
+    <label>Price:</label><br/>
+    <input type="number" th:field="*{price}" required />
+    <br/><br/>
+
+    <label>Description:</label><br/>
+    <textarea th:field="*{description}"></textarea>
+    <br/><br/>
+
+    <label>Image URL:</label><br/>
+    <input type="text" th:field="*{imageUrl}" required />
+    <br/><br/>
+
+    <button type="submit">Update Product</button>
+</form>
+
+<br/>
+<a href="/seller/dashboard">⬅ Back to Dashboard</a>
+
+</body>
+</html>

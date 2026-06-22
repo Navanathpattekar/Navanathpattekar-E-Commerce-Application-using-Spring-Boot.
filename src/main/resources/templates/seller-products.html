@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Seller Products</title>
+    <link rel="stylesheet" href="/css/seller.css">
+</head>
+<body>
+
+<h2>Your Products</h2>
+<a href="/seller/products/add">➕ Add Product</a>
+
+<div class="product-grid">
+    <div class="product-card" th:each="p : ${products}">
+        <img th:src="${p.imageUrl}" width="120">
+        <h4 th:text="${p.name}"></h4>
+        <p th:text="${p.price}"></p>
+    </div>
+</div>
+
+</body>
+</html>

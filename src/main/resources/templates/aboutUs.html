@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Gentleman Jones</title>
+  <link rel="stylesheet" th:href="@{/CSS/aboutUs.css}" />
+</head>
+<body>
+
+  <header>
+    <h1>GENTLEMAN JONES</h1>
+  </header>
+
+  <!-- Navigation with Thymeleaf -->
+  <nav>
+    <a th:href="@{/home}">Home</a>
+    <a th:href="@{/aboutUs}">About Us</a>
+    <a th:href="@{/contactUs}">Contact Us</a>
+  </nav>
+
+  <section class="container">
+    <h1>About Us</h1>
+    <p>At <strong>Gentleman Jones</strong>, we believe that fashion is more than just clothing — it's a way of life. We provide timeless and trend-forward pieces designed to elevate your everyday style.</p>
+    
+    <p>Founded with a passion for quality, class, and craftsmanship, our mission is to empower individuals to dress with confidence and character. Each product is curated with attention to detail and a commitment to excellence.</p>
+    
+    <p>Whether you're shopping for a formal occasion, a business meeting, or weekend leisurewear, we ensure a seamless experience that reflects sophistication at every step.</p>
+
+    <blockquote>
+      “Style is a way to say who you are without having to speak.” – Rachel Zoe
+    </blockquote>
+  </section>
+
+  <footer>
+    &copy; 2025 Gentleman Jones. Designed with passion.
+  </footer>
+
+</body>
+</html>

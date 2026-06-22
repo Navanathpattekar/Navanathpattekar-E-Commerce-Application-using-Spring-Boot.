@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Seller</title>
+</head>
+<body>
+<h2>Create New Seller</h2>
+
+<form th:action="@{/admin/create-seller}" th:object="${user}" method="post">
+    <label>Username:</label>
+    <input type="text" th:field="*{username}" required /><br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" required /><br/>
+	
+	<label>Password:</label>
+	<div style="position:relative;display:inline-block;width:100%;">
+	  <input type="password" th:field="*{password}" id="password" required style="padding-right:35px;width:100%;" />
+	  <span onclick="toggle('password')" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;">👁️</span>
+	</div><br/>
+
+    <button type="submit">Create Seller</button>
+</form>
+
+<script>
+function toggle(id){const i=document.getElementById(id);i.type=i.type==="password"?"text":"password";}
+</script>
+
+
+<a th:href="@{/admin/sellers}">Back to Sellers List</a>
+</body>
+</html>

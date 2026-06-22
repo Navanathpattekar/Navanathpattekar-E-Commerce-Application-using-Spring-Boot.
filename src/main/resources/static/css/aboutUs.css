@@ -1,0 +1,126 @@
+/* Reset some basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f0f2f5, #dbe1e8);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  background: #343a40;
+  padding: 12px 0;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+  color: #2b2e4a;
+  font-size: 2rem;
+}
+
+/* Paragraph */
+p {
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #928dab;
+  outline: none;
+}
+
+/* Button */
+form button {
+  background: linear-gradient(to right, #928dab, #1f1c2c);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+form button:hover {
+  background: linear-gradient(to right, #6e6484, #1f1c2c);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: #1f1c2c;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}

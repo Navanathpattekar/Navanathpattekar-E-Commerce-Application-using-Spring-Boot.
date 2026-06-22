@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gentleman Jones</title>
+
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+  <div class="contact-info">📞 CALL US: (+91) 93530 16038</div>
+
+  <div class="account-links">
+    <h5 th:if="${username}" th:text="'Welcome, ' + ${username} + '!'"></h5>
+    <h5 th:unless="${username}">Welcome, Guest!</h5>
+  </div>
+
+  <div class="login">
+    <a th:if="${username == null}" th:href="@{/login}">LOGIN</a>&nbsp;&nbsp;
+    <a th:if="${username == null}" th:href="@{/signup}">SIGNUP</a>&nbsp;&nbsp;
+    <a th:if="${username}" th:href="@{/logout}">LOGOUT</a>&nbsp;&nbsp;
+    <a th:href="@{/cart}" class="text-white">
+    <i class="fa-solid fa-cart-shopping fa-xl" style="color: #fafcff;"></i>
+	</a>
+     
+  </div>
+</div>
+    
+
+    <!-- Header & Navigation -->
+    <header>
+      <div class="fancy-text">GENTLEMAN JONES</div>
+      <nav class="nav-bar">
+	    <a th:href="@{/home}">Home</a>
+	    <a th:href="@{/aboutUs}">About Us</a>
+	    <a th:href="@{/contactUs}">Contact Us</a>
+	</nav>
+
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img
+            src="https://cdn.pixabay.com/photo/2019/02/21/11/18/shopping-4011117_640.jpg"
+            alt="Fashion Model 1"
+          />
+          <div class="carousel-caption">
+            <h1>Men's Collection</h1>
+            <p>Stylish outfits for every season</p>
+            <a th:href="@{/men}" class="btn">Shop Now</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://cdn.pixabay.com/photo/2019/02/21/11/18/shopping-4011117_640.jpg"
+            alt="Fashion Model 2"
+          />
+          <div class="carousel-caption">
+            <h1>New Arrivals</h1>
+            <p>Fresh styles, trending now</p>
+           <a th:href="@{/jewels}" class="btn">Explore</a>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="https://img.freepik.com/free-photo/cyber-monday-shopping-sales_23-2148688560.jpg?ga=GA1.1.1514347250.1746552912&semt=ais_hybrid&w=740"
+            alt="Fashion Model 3"
+          />
+          <div class="carousel-caption">
+            <h1>Exclusive Deals</h1>
+            <p>Up to 50% off on selected items</p>
+            <a href="furniture.html" class="btn">View Offers</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="feature">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png"
+          alt="Shipping Icon"
+        />
+        <h4>FREE SHIPPING</h4>
+        <p>On all orders over $200</p>
+      </div>
+      <div class="feature">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+          alt="Return Icon"
+        />
+        <h4>30 DAYS RETURN</h4>
+        <p>Easy returns & exchanges</p>
+      </div>
+      <div class="feature">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/942/942770.png"
+          alt="Secure Payment Icon"
+        />
+        <h4>100% SECURE</h4>
+        <p>Safe & secure payments</p>
+      </div>
+    </section>
+
+    <section class="category-carousel">
+      <h2>What are you shopping for today?</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
+        <div class="carousel-track" id="carouselTrack">
+          	<div class="category">
+			    <a th:href="@{/women}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqZIVGCeCZmDAVTFbSoZ1KJGVnTUFBlKeRIg&s" alt="">
+			        <p>Women</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/men}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ0UK4m7xFcla4KLcQENA4uzPWYP3smJHgbg&s" alt="">
+			        <p>Men</p>			       
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/kids}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyKBQKmL9CNdWpOBZ1QWkOAEpfFthNKlGEIQ&s" alt="">
+			        <p>Kids</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/shoes}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWjjiGcAuRKKuXpZ64yc8tHCmLq0rbz1H-Q&s" alt="">
+			        <p>Shoes</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/jewels}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT63znsby4tuU-YVfPh7-7NkumalVaWOmIqfg&s" alt="">
+			        <p>Jewelary</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/beauty}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYL6Ea6vreSAnhYMBs1LWnPulr6_j56BbL9Q&s" alt="">
+			        <p>Beauty</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/decoration}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AVBQVINOxPjCRGDITofCK2Uq0mApm9XN2A&s" alt="">
+			        <p>Decoration</p>
+			    </a>
+			</div>
+			
+			<div class="category">
+			    <a th:href="@{/furniture}">
+			        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JCqQ-wfUnfPSYQnDP8R5H9ODHk7FuXYs9g&s" alt="">
+			        <p>Furnitures</p>
+			    </a>
+			</div>
+
+        </div>
+        <button class="carousel-btn right" onclick="moveCarousel(1)">&#10095;</button>
+      </div>
+    </section>
+
+
+    <div class="hero-section">
+      <div class="content">
+          <h1>There's a deal for you, too</h1>
+          <p>Don't miss a chance to save on items you've been looking for.</p>
+          <a href="#" class="explore-btn">Explore now</a>
+      </div>
+  </div>
+  
+
+  <div class="top-links">
+  <div>
+    <img src="https://img.icons8.com/ios-filled/50/000000/help.png" width="40" alt="Support">
+    <a th:href="@{/support}">Visit our Support Center</a>
+  </div>
+
+  <div>
+    <img src="https://img.icons8.com/ios-filled/50/000000/track-order.png" width="40" alt="Order Status">
+    <a th:href="@{/order-status}">Check your Order Status</a>
+  </div>
+
+  <div>
+    <img src="https://img.icons8.com/ios-filled/50/000000/delivery.png" width="40" alt="Shipping">
+    <a th:href="@{/shipping}">Shipping, Delivery & Store Pickup</a>
+  </div>
+
+  <div>
+    <img src="https://img.icons8.com/ios-filled/50/000000/return-purchase.png" width="40" alt="Returns">
+    <a th:href="@{/returns}">Returns & Exchanges</a>
+  </div>
+</div>
+
+<script th:src="@{/js/home.js}"></script>
+
+  </body>
+</html>
+
+
+
+

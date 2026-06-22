@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" th:href="@{/css/admin-table.css}">
+    
+</head>
+<body>
+
+<div class="container">
+    <h2>Products</h2>
+
+    <table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th>Action</th>
+</tr>
+
+<tr th:each="p : ${products}">
+    <td th:text="${p.id}"></td>
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.category}"></td>
+    <td th:text="${p.price}"></td>
+    <td>
+    <form th:action="@{/admin/delete-product/{id}(id=${p.id})}"
+          method="post"
+          onsubmit="return confirm('Delete this product?');">
+        <button class="btn-delete">Delete</button>
+    </form>
+</td>
+
+</tr>
+</table>
+
+<a href="/admin/dashboard">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

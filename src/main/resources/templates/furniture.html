@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Furniture Collection</title>
+  <link rel="stylesheet" href="/css/furniture.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">FurniStyle</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search furniture..." oninput="filterProducts()">
+    </div>
+    <a href="/cart" class="cart-icon">🛒</a>
+  </div>
+
+  <!-- Scroll to top -->
+  <button id="scrollToTopBtn" title="Go to top">⬆</button>
+
+  <!-- Hero Section -->
+  <div class="hero" style="background-image: url('https://i.pinimg.com/736x/dc/06/73/dc0673723eafe352f38a47fecd673f40.jpg');">
+    <div class="hero-content">
+      <h1>Comfort Meets Elegance</h1>
+      <p>Discover furniture that defines your space.</p>
+      <button>Explore Now</button>
+    </div>
+  </div>
+
+  <!-- Furniture Products -->
+  <div class="card-container">
+
+    <!-- EMPTY CHECK -->
+    <div th:if="${#lists.isEmpty(products)}">
+      <p style="text-align:center;">No furniture products available.</p>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div class="card" th:each="product : ${products}">
+      <h3 th:text="${product.name}"></h3>
+
+      <img th:src="${product.imageUrl}" th:alt="${product.name}" />
+
+      <p th:text="${product.description}"></p>
+
+      <p>₹ <span th:text="${product.price}"></span></p>
+
+      <div class="buttons">
+
+        <!-- BUY NOW -->
+        <a th:href="@{/payment}" class="btn btn-buy">Buy Now</a>
+
+        <!-- ADD TO CART -->
+        <form th:action="@{/cart/add}" method="post">
+          <input type="hidden" name="title" th:value="${product.name}" />
+          <input type="hidden" name="description" th:value="${product.description}" />
+          <input type="hidden" name="price" th:value="${product.price}" />
+          <input type="hidden" name="imageUrl" th:value="${product.imageUrl}" />
+          <button type="submit" class="btn btn-cart">Add to Cart</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Home Button -->
+  <center>
+    <a href="/home"><button class="home-btn">Home</button></a>
+  </center>
+
+  <!-- JS -->
+  <script src="/js/furniture.js"></script>
+</body>
+</html>
